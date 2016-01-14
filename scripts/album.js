@@ -157,15 +157,16 @@ window.onload = function() {
         }
     });
 
+    songListContainer.addEventListener('mouseleave', function(event) {
+        var songItem = getSongItem(event.target);
+        var songItemNumber = songItem.getAttribute('data-song-number');
+     
+        if (songItemNumber !== currentlyPlayingSong) {
+        songItem.innerHTML = songItemNumber;
+        }
+    });
+
     for (i = 0; i < songRows.length; i++) {
-        songRows[i].addEventListener('mouseleave', function(event) {
-            var songItem = getSongItem(event.target);
-            var songItemNumber = songItem.getAttribute('data-song-number');
- 
-            if (songItemNumber !== currentlyPlayingSong) {
-                songItem.innerHTML = songItemNumber;
-            }
-        });
 
         songRows[i].addEventListener('click', function(event) {
             clickHandler(event.target);
