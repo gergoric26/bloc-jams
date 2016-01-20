@@ -77,8 +77,8 @@ var setSong = function(songNumber) {
     currentSongFromAlbum = currentAlbum.songs[songNumber - 1];    
     currentSoundFile = new buzz.sound(currentSongFromAlbum.audioUrl, {
         
-         formats: [ 'mp3' ],
-         preload: true
+        formats: [ 'mp3' ],
+        preload: true
      });
     setVolume(currentVolume);
 };
